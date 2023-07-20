@@ -8,6 +8,7 @@ import { ConfigModule } from '@nestjs/config';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { AppResponseInterceptor } from './comon/interceptors/app-response.interceptor';
 import { AppExceptionFilter } from './comon/filters/app-exception.filter';
+import { NewsModule } from './modules/news/news.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { AppExceptionFilter } from './comon/filters/app-exception.filter';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    NewsModule,
   ],
   controllers: [AppController],
   providers: [
